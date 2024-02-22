@@ -65,6 +65,7 @@ fig = plt.figure(figsize=(8, 5))
 ax = fig.add_subplot(111)
 ax.plot(mesh.cell_centers_x, true_model, "b-")
 ax.set_ylim([-2, 2])
+plt.show()
 
 #############################################
 # Defining the Linear Operator
@@ -103,6 +104,7 @@ for i in range(G.shape[0]):
     ax.plot(G[i, :])
 
 ax.set_title("Columns of matrix G")
+plt.show()
 
 
 #############################################
@@ -209,3 +211,4 @@ ax[1].plot(mesh.cell_centers_x, true_model, "b-")
 ax[1].plot(mesh.cell_centers_x, recovered_model, "r-")
 ax[1].legend(("True Model", "Recovered Model"))
 ax[1].set_ylim([-2, 2])
+plt.show()
