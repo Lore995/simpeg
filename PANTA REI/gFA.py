@@ -47,12 +47,12 @@ ax1.set_ylabel("Latitude")
 # ax1.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:.4f}"))
 
 cx1 = fig.add_axes([0.09, 0.18, 0.35, 0.04])
-norm1 = mpl.colors.Normalize(vmin=-np.max(np.abs(gFA)), vmax=np.max(np.abs(gFA))) #*1000 imposta la scala in mGal
+norm1 = mpl.colors.Normalize(vmin=np.min(gFA*0.001), vmax=np.max(gFA*0.001)) #*0.001 imposta la scala in mGal
 cbar1 = mpl.colorbar.ColorbarBase(
     cx1, norm=norm1, orientation="horizontal", cmap=mpl.cm.bwr
 )
 
-cbar1.set_label("$μGal$", size=12)
+cbar1.set_label("$mGal$", size=12)
 
 
 """Plot topography"""
